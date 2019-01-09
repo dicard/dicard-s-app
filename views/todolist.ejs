@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <title>Dicard's TODOlist</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
@@ -11,11 +11,15 @@
     <h1>My TODO List</h1>
 
     <ul>
-        <li><i class="fas fa-trash-alt"></i> item 1</li>
-        <li><i class="fas fa-trash-alt"></i> item 2</li>
-        <li><i class="fas fa-trash-alt"></i> ittem 3</li>
+        <% todolist.forEach(function(todo, index) { %>
+        <li><a href="/todolist/del/<%= index %>"><i class="fas fa-trash-alt"></i></a> <%= todo %> </li>
+        <% }); %>
     </ul>
     
-    <form action="/todolist"
+    <form action="/todolist/add" method="post">
+        <label for="newTask">What should i do ?</label>
+        <input type="text" name="newTask" id=newTask autofocus>
+        <input type="submit" value="Add Task">
+    </form>
 </body>
 </html>

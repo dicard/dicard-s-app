@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Socket.io</title>
+    </head>
+ 
+    <body>
+        <h1>Live CHat</h1>
+
+        <form action="/" method="post" id="chat-form">
+            <input type="text" name="message" id ="message" placeholder="vôtre message ..." size="50" autofocus>
+            <input type="submit" id="envoi-message" value ="envoyer">
+        </form>
+        <section id="chat-zone">
+
+        </section>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="/front/chat.js"></script>
+    </body>
+</html>
