@@ -3,7 +3,7 @@ var express = require('express'),
     io = require('socket.io')();
 
 index.get('/', (req, res) => {
-
+    
     res.render('index.ejs');
     io.sockets.on('connection', (socket) => {
         socket.on('new-user', (pseudo) => {

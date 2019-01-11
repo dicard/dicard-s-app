@@ -1,0 +1,35 @@
+body {
+    background: url("../images/willem-karssenberg-20038-unsplash.jpg");
+    background-size: auto;
+    background-size: cover;
+    text-align: center;
+    font-family: sans-serif;
+
+}
+
+#index-wrapper {
+    border: 1px solid black;
+    font-size: 1.2em;
+    height: 60vh;
+    width: 60vw;
+    background-color: #ddd;
+    position: fixed;
+    top: 20vh;
+    left: 20vw;
+    padding: 1.5em;
+    border-radius: 0.8em;
+
+}
+
+#index-wrapper h1 {
+    margin: 2em;
+    font-size: 2em;
+}
+
+nav ul{
+    display: flex;
+    justify-content: center;
+}
+nav ul li {
+    margin: 1em;
+}

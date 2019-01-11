@@ -1,23 +1,21 @@
-var socket = io.connect('http://localhost:8080');
+var chat = io.connect('http://localhost:8080/chat');
 
-var pseudo = prompt('Bienvenue, comment vous appellez vous ?')
-
-socket.on('bienvenue', function(message) {
-    $('#chat-zone').append('<p><i>' + message + '</i></p>')
+chat.on('bienvenue', function(pseudo) {
+    $('#chat-zone').append('<p><i>' + pseudo + '</i> à rejoint le chat</p>')
 });
 
 $('#envoi-message').click( (e) => {
 
     var message = $('#message').val();
-    console.log(message);
     
 
     e.preventDefault();
     $('#message').val('');
-    socket.emit('message', message);
+    chat.emit('chatMessage', message);
 
 });
 
-socket.on('message', function(message) {
-    $('#chat-zone').append(message);
+chat.on('afficheMessage', function(messageData) {
+    console.log(messageData);
+    $('#chat-zone').append('<p><strong>' + messageData.user + '</strong> : ' + messageData.message + '</p>');
 });

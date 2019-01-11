@@ -5,4 +5,4 @@ chat.get('/', (req, res) => {
     res.render('chat.ejs', {chat: req.session.chat});
 });
 
-module.export = chat;
+module.exports = chat;

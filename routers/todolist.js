@@ -1,7 +1,7 @@
-var express = require('express');
-var todolist = express.Router();
-var bodyParser = require('body-parser');
-var urlencodedParser = bodyParser.urlencoded({ extended: false });
+var express = require('express'),
+    todolist = express.Router(),
+    bodyParser = require('body-parser'),
+    urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 
 todolist.use(function(req, res, next) {
